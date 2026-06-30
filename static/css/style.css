@@ -1,0 +1,240 @@
+/* Old Money Banking Style - Base */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap');
+
+:root {
+    --primary: #1A3626; /* Deep Forest Green */
+    --primary-light: #2A4C3B;
+    --secondary: #0A192F; /* Classic Navy */
+    --accent: #C5A059; /* Antique Gold */
+    --accent-hover: #D4B26A;
+    --bg-light: #F4F1EA; /* Ivory/Parchment */
+    --bg-white: #FFFFFF;
+    --text-dark: #2C3E50; /* Charcoal */
+    --text-muted: #5D6D7E;
+    --border-color: #D4C4A8;
+    --border-color-light: #E8DECC;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    font-family: 'Lato', sans-serif;
+    min-height: 100vh;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4c4a8' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary);
+}
+
+.bg-darker {
+    background-color: var(--bg-white) !important;
+    border-top: 1px solid var(--border-color);
+}
+
+.text-primary {
+    color: var(--primary) !important;
+}
+
+.text-accent {
+    color: var(--accent) !important;
+}
+
+/* Navbar */
+.classic-nav {
+    background-color: var(--secondary);
+    border-bottom: 3px solid var(--accent);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.classic-nav .navbar-brand {
+    color: var(--bg-light);
+    letter-spacing: 1px;
+}
+
+.classic-nav .navbar-brand span {
+    color: var(--accent);
+}
+
+.classic-nav .btn-outline-primary {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+.classic-nav .btn-outline-primary:hover {
+    background-color: var(--accent);
+    color: var(--secondary);
+}
+
+/* Cards & Panels */
+.classic-card, .classic-panel {
+    background: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.classic-card::before {
+    content: '';
+    position: absolute;
+    top: 4px; right: 4px; bottom: 4px; left: 4px;
+    border: 1px solid var(--border-color-light);
+    border-radius: 2px;
+    pointer-events: none;
+}
+
+.classic-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: white;
+    border-radius: 2px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-light);
+    border-color: var(--primary-light);
+}
+
+.btn-success {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: var(--secondary);
+    border-radius: 2px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.btn-success:hover {
+    background-color: var(--accent-hover);
+    border-color: var(--accent-hover);
+    color: var(--secondary);
+}
+
+/* Sidebar */
+.sidebar {
+    background: var(--bg-white);
+    border-right: 1px solid var(--border-color);
+    z-index: 1000;
+}
+
+.nav-link {
+    color: var(--text-muted);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    border-bottom: 1px solid transparent;
+}
+
+.nav-link.active {
+    color: var(--primary) !important;
+    background: var(--bg-light) !important;
+    border-left: 3px solid var(--accent);
+    font-weight: bold;
+}
+
+.nav-link:hover:not(.active) {
+    color: var(--primary);
+    background: var(--bg-light);
+}
+
+/* Inputs */
+.form-control {
+    border-radius: 2px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-white);
+    color: var(--text-dark);
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(197, 160, 89, 0.25);
+    border-color: var(--accent);
+}
+
+.input-group-text {
+    border-radius: 2px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-light);
+    color: var(--primary);
+}
+
+/* Animations */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+}
+
+.animate-fade-up-delayed {
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out 0.2s forwards;
+}
+
+.animate-fade-up-delayed-2 {
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out 0.4s forwards;
+}
+
+.z-index-1 {
+    z-index: 1;
+}
+
+.max-w-600 {
+    max-width: 600px;
+}
+
+/* Table styles */
+.table {
+    border-color: var(--border-color-light);
+    color: var(--text-dark);
+}
+
+.table thead th {
+    background-color: var(--primary);
+    color: var(--bg-light);
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid var(--accent);
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+    background-color: rgba(26, 54, 38, 0.02);
+    color: var(--text-dark);
+}
+
+.table-hover > tbody > tr:hover > * {
+    background-color: rgba(197, 160, 89, 0.1);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-light);
+    border-left: 1px solid var(--border-color);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--primary-light);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
