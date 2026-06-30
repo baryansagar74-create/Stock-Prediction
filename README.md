@@ -1,11 +1,3 @@
----
-title: Stock Prediction
-emoji: 📈
-colorFrom: blue
-colorTo: indigo
-sdk: docker
-pinned: false
----
 # Stock Market Price Prediction Using ANN on Live Data
 
 **Live Demo on Hugging Face Spaces:** [https://huggingface.co/spaces/ARYAN9184/Stock_Predictor](https://huggingface.co/spaces/ARYAN9184/Stock_Predictor)
