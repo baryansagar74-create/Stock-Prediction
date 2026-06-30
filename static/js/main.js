@@ -228,8 +228,13 @@ function initChart() {
     const ctx = document.getElementById('priceChart');
     if (!ctx) return;
     
-    Chart.defaults.color = '#5D6D7E';
-    Chart.defaults.font.family = 'Lato';
+    Chart.defaults.color = '#6B7280';
+    Chart.defaults.font.family = 'Inter';
+    
+    // Create gradient
+    let gradient = ctx.getContext('2d').createLinearGradient(0, 0, 0, 400);
+    gradient.addColorStop(0, 'rgba(139, 92, 246, 0.4)');
+    gradient.addColorStop(1, 'rgba(139, 92, 246, 0.0)');
     
     priceChart = new Chart(ctx, {
         type: 'line',
@@ -239,21 +244,23 @@ function initChart() {
                 {
                     label: 'Actual Price',
                     data: [],
-                    borderColor: '#0A192F',
+                    borderColor: '#111827',
                     backgroundColor: 'transparent',
                     borderWidth: 2,
-                    pointRadius: 3,
-                    tension: 0.1
+                    pointRadius: 0,
+                    pointHoverRadius: 4,
+                    tension: 0.4
                 },
                 {
                     label: 'Predicted Price',
                     data: [],
-                    borderColor: '#C5A059',
-                    backgroundColor: 'rgba(197, 160, 89, 0.15)',
+                    borderColor: '#8B5CF6',
+                    backgroundColor: gradient,
                     borderWidth: 2,
                     borderDash: [5, 5],
-                    pointRadius: 3,
-                    tension: 0.1,
+                    pointRadius: 0,
+                    pointHoverRadius: 4,
+                    tension: 0.4,
                     fill: true
                 }
             ]
@@ -266,18 +273,29 @@ function initChart() {
                 intersect: false,
             },
             plugins: {
-                legend: { position: 'top' },
+                legend: { display: false },
                 tooltip: {
-                    backgroundColor: 'rgba(253, 251, 247, 0.95)',
-                    titleColor: '#0A192F',
-                    bodyColor: '#0A192F',
-                    borderColor: '#D4C4A8',
-                    borderWidth: 1
+                    backgroundColor: '#FFFFFF',
+                    titleColor: '#111827',
+                    bodyColor: '#6B7280',
+                    borderColor: 'rgba(0, 0, 0, 0.06)',
+                    borderWidth: 1,
+                    padding: 12,
+                    boxPadding: 6,
+                    usePointStyle: true,
+                    titleFont: { family: 'Outfit', size: 14, weight: 'bold' },
+                    bodyFont: { family: 'Inter', size: 13 }
                 }
             },
             scales: {
-                x: { grid: { color: 'rgba(0, 0, 0, 0.05)' } },
-                y: { grid: { color: 'rgba(0, 0, 0, 0.05)' } }
+                x: { 
+                    grid: { display: false },
+                    border: { display: false }
+                },
+                y: { 
+                    grid: { color: 'rgba(0, 0, 0, 0.03)', drawBorder: false },
+                    border: { display: false }
+                }
             }
         }
     });

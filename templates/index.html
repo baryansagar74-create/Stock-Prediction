@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stock Prediction Ledger</title>
+    <title>Predict. Invest. Grow.</title>
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -14,67 +14,80 @@
 <body class="overflow-x-hidden">
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg classic-nav fixed-top">
+    <nav class="navbar navbar-expand-lg classic-nav fixed-top py-3">
         <div class="container">
             <a class="navbar-brand fw-bold" href="/">
-                <i class="fas fa-landmark text-accent me-2"></i>StockPredict
+                <i class="fas fa-layer-group me-2" style="color: var(--accent-purple);"></i>Uplyx AI
             </a>
             <div class="d-flex gap-3">
-                <a href="/dashboard" class="btn btn-outline-primary rounded-0 px-4">Ledger Dashboard</a>
+                <a href="/dashboard" class="btn btn-primary px-4">Open Dashboard</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section min-vh-100 d-flex align-items-center position-relative pt-5">
+    <section class="min-vh-100 d-flex align-items-center position-relative pt-5">
         <div class="container text-center z-index-1 mt-5">
-            <h1 class="display-3 fw-bold mb-4 animate-fade-up">Stock Market <br> <span class="text-accent">Price Prediction</span></h1>
-            <p class="lead mb-5 animate-fade-up-delayed" style="color: var(--text-muted);">Employing advanced neural networks and institutional data <br> to anticipate market movements with precision.</p>
+            <div class="d-inline-block custom-badge mb-4 animate-fade-up">Introducing V2.0</div>
             
-            <div class="classic-card p-5 mx-auto max-w-600 animate-fade-up-delayed-2">
-                <div class="input-group input-group-lg mb-4 shadow-sm">
-                    <span class="input-group-text">
-                        <i class="fas fa-search"></i>
-                    </span>
-                    <input type="text" id="ticker-input" class="form-control" placeholder="Enter Ticker (e.g., AAPL, NVDA)" style="box-shadow: none;">
+            <h1 class="display-3 fw-bold mb-4 animate-fade-up" style="max-width: 800px; margin: 0 auto; line-height: 1.1;">
+                Predict the market with <br>
+                <span class="gradient-text">machine precision.</span>
+            </h1>
+            
+            <p class="lead mb-5 animate-fade-up-delayed mx-auto" style="color: var(--text-secondary); max-width: 600px;">
+                Advanced neural networks packaged in a beautiful, simple interface. Predict price trajectories for any asset, instantly.
+            </p>
+            
+            <div class="mx-auto animate-fade-up-delayed-2" style="max-width: 500px;">
+                <div class="search-container mb-4">
+                    <span class="px-3 text-muted"><i class="fas fa-search"></i></span>
+                    <input type="text" id="ticker-input" class="form-control" placeholder="Enter ticker (e.g., AAPL, TSLA, BTC-USD)">
+                    <button class="btn btn-success ms-1" onclick="predictNow()">Predict</button>
                 </div>
                 
                 <div class="d-flex justify-content-center gap-3">
-                    <button class="btn btn-primary btn-lg px-4" onclick="initiateTraining()">
-                        <i class="fas fa-cogs me-2"></i>Initialize Model
+                    <button class="btn btn-outline-primary" onclick="initiateTraining()">
+                        Train Model
                     </button>
-                    <button class="btn btn-success btn-lg px-4" onclick="predictNow()">
-                        <i class="fas fa-chart-line me-2"></i>Predict Price
-                    </button>
+                    <a href="/dashboard" class="btn btn-outline-primary">
+                        View Demo
+                    </a>
                 </div>
-                <div id="status-message" class="mt-4 text-start small fw-bold"></div>
+                <div id="status-message" class="mt-4 text-center small fw-bold"></div>
             </div>
         </div>
     </section>
 
-    <!-- Project Overview -->
-    <section class="py-5 bg-darker">
-        <div class="container py-4">
-            <div class="row g-4 text-center">
+    <!-- Features Section -->
+    <section class="py-5 bg-white">
+        <div class="container py-5">
+            <div class="row g-5">
                 <div class="col-md-4">
-                    <div class="classic-card p-5 h-100">
-                        <i class="fas fa-university fa-3x text-primary mb-4"></i>
-                        <h4 class="fw-bold mb-3">Institutional Data</h4>
-                        <p class="text-muted">Automatically acquires and standardizes the latest market data directly from financial sources.</p>
+                    <div class="bento-card p-5 h-100">
+                        <div class="mb-4 d-inline-block p-3 rounded-circle" style="background: rgba(59, 130, 246, 0.1);">
+                            <i class="fas fa-bolt fa-2x" style="color: var(--accent-blue);"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Real-time Data</h4>
+                        <p class="text-muted">Fetches live market data instantly. No delays, no stale metrics. Always up to date.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="classic-card p-5 h-100">
-                        <i class="fas fa-project-diagram fa-3x text-accent mb-4"></i>
-                        <h4 class="fw-bold mb-3">Neural Architecture</h4>
-                        <p class="text-muted">Utilizes a meticulously configured Multi-layer Feedforward Neural Network to discern market patterns.</p>
+                    <div class="bento-card p-5 h-100">
+                        <div class="mb-4 d-inline-block p-3 rounded-circle" style="background: rgba(139, 92, 246, 0.1);">
+                            <i class="fas fa-brain fa-2x" style="color: var(--accent-purple);"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Neural AI</h4>
+                        <p class="text-muted">Powered by deep feedforward networks. The model trains on technical indicators and volume trends.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="classic-card p-5 h-100">
-                        <i class="fas fa-balance-scale fa-3x text-primary mb-4"></i>
-                        <h4 class="fw-bold mb-3">Rigorous Metrics</h4>
-                        <p class="text-muted">Evaluates performance applying stringent criteria including RMSE, MAPE, and Directional Accuracy.</p>
+                    <div class="bento-card p-5 h-100">
+                        <div class="mb-4 d-inline-block p-3 rounded-circle" style="background: rgba(236, 72, 153, 0.1);">
+                            <i class="fas fa-chart-pie fa-2x" style="color: var(--accent-pink);"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Clear Metrics</h4>
+                        <p class="text-muted">No hidden black boxes. We provide full visibility into RMSE, MAPE, and model confidence.</p>
                     </div>
                 </div>
             </div>
@@ -82,7 +95,7 @@
     </section>
 
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.css"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
     <script src="/static/js/main.js"></script>
 </body>
