@@ -1,3 +1,11 @@
+---
+title: Stock Prediction
+emoji: 📈
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+pinned: false
+---
 # Stock Market Price Prediction Using ANN on Live Data
 
 This project is a complete, production-quality web application designed for predicting stock market prices using an Artificial Neural Network (ANN) trained on live data fetched from yfinance. It is built as an industrial-grade system suitable for academic research and portfolio showcase.
