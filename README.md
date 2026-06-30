@@ -8,7 +8,7 @@ pinned: false
 ---
 # Stock Market Price Prediction Using ANN on Live Data
 
-[![Live Demo on Hugging Face Spaces](https://img.shields.io/badge/Live%20Demo-Hugging%20Face%20Spaces-blue?logo=huggingface)](https://huggingface.co/spaces/HYPERx54/Stock-Prediction)
+**Live Demo on Hugging Face Spaces:** [https://huggingface.co/spaces/ARYAN9184/Stock_Predictor](https://huggingface.co/spaces/ARYAN9184/Stock_Predictor)
 
 This project is a complete, production-quality web application designed for predicting stock market prices using an Artificial Neural Network (ANN) trained on live data fetched from yfinance. It is built as an industrial-grade system suitable for academic research and portfolio showcase.
 
